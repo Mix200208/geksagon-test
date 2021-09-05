@@ -1,75 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white"
+    tools:context=".view.MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/buttonPanel"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <ImageView
+    <ImageView
             android:id="@+id/albumIcon"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="6" />
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/album"/>
         
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
+            android:orientation="vertical"
             android:padding="10dp">
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progress="50"
+                >
+
+            </SeekBar>
 
             <TextView
                 android:id="@+id/songName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="@string/music_title"
                 android:textColor="@color/black"
                 android:textStyle="normal" />
 
         </LinearLayout>
 
 
-    </LinearLayout>
-
-
     <LinearLayout
         android:id="@+id/buttonPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
 
         <ImageButton
             android:id="@+id/randomButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="15dp"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/ic_baseline_sync_alt_60" />
 
         <ImageButton
             android:id="@+id/playButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/ic_baseline_play_arrow_60" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/btn_bg"
+            app:srcCompat="@drawable/ic_baseline_play_arrow_60"
+            />
 
         <ImageButton
             android:id="@+id/repeatButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="15dp"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/ic_baseline_replay_60" />
 
@@ -77,4 +81,4 @@
     </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>
